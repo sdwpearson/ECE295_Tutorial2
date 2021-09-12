@@ -18,11 +18,7 @@
 ///
 void I2Cinit(void)
 {
-	TWSR = 0x01; //prescaler of 1
-	TWBR = 0x01;
-
-	//enable I2C
-	TWCR = 1<<TWEN;
+	// Fill in with your code
 }
 
 
@@ -33,9 +29,7 @@ void I2Cinit(void)
 ///
 void I2Cstart()
 {
-	TWCR = (1<<TWINT)|(1<<TWSTA)|(1<<TWEN); // clear interrupt (TWINT), generate a start when possible (TWSTA), enable I2C (TWEN)
-	while ((TWCR & (1<<TWINT))==0); // wait until interrupt actually clears
-	//uint8_t status = TWSR & 0XF8; //check if start transmitted
+	// Fill in with your code
 }
 
 
@@ -45,7 +39,7 @@ void I2Cstart()
 ///
 void I2Cstop()
 {
-	TWCR = (1<<TWINT)|(1<<TWSTO)|(1<<TWEN); //clear interrupt, do a stop and enable
+	// Fill in with your code
 }
 
 
@@ -58,10 +52,7 @@ void I2Cstop()
 ///
 void I2Cwrite(uint8_t data)
 {
-	TWDR = data; //write data to data register
-	TWCR =  (1<<TWINT)|(1<<TWEN);
-	while (!(TWCR & (1<<TWINT)));
-	//uint8_t status = TWSR & 0XF8; //check if start transmitted
+	// Fill in with your code
 }
 
 
