@@ -12,6 +12,7 @@
 #include <stdio.h>
 
 #include "i2c.h"
+#include "screen_cmds.h"
 
 int main(void)
 {
